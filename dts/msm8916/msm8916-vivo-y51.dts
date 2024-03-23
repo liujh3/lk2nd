@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: GPL-2.0-only
+
+/dts-v1/;
+
+#include <skeleton.dtsi>
+
+/ {
+	model = "Qualcomm Technologies, Inc. MSM 8916 MTP - PD1510";
+	compatible = "vivo,y51", "qcom,msm8916", "lk2nd,device";
+	qcom,msm-id = <206 0>;
+	qcom,board-id = <8 18>;
+};
