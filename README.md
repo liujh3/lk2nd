@@ -53,6 +53,8 @@ If you get `fastboot: error: Couldn't parse partition size '0x'` try one of the 
 
 Or, flash `lk2nd.img` using EDL: `edl w boot lk2nd.img`
 
+> vivo y51(pd1510)安装请参考[installation_for_pd1510.md](Documentation/installation_for_pd1510.md)
+
 ## Usage
 lk2nd provides the standard Android fastboot protocol for flashing/booting Android boot images.
 

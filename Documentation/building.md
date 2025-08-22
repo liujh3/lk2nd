@@ -40,6 +40,26 @@ Replace `TOOLCHAIN_PREFIX` with the path to your tool chain.
 **Note:** Unlike lk2nd, lk1st is still experimental and therefore not described
 here yet.
 
+## 为 Vivo Y51 (pd1510) 构建
+- 首先确保你设备的显示面板为 `tmotm9605a` ，移除了面板检测，不同的面板可能会造成设备损坏
+- 参考上方[Requirements](#requirements)设置编译环境，工具链建议到[这里](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads)下载对应你平台的 `-arm-none-eabi` ，还需要 `GNU Make` 等常用工具，请自行安装
+- 编译lk
+  - 使用这条命令编译，`TOOLCHAIN_PREFIX` 要换成你的实际工具链路径，注意是 `msm8916` ，不是 `lk1st-msm8916`
+    ```sh
+    $ make TOOLCHAIN_PREFIX=arm-none-eabi- msm8916
+    ```
+  - 编译产物为 `build-msm8916/emmc_appsboot.mbn` ，要使用[qtestsign](https://github.com/msm8916-mainline/qtestsign.git)签名后才可以启动
+    ```sh
+    $ ./qtestsign.py aboot emmc_appsboot.mbn
+    ```
+- 编译lk2nd
+  - 使用这条命令编译，同样确保`TOOLCHAIN_PREFIX` 是你的实际工具链
+    ```sh
+    $ make TOOLCHAIN_PREFIX=arm-none-eabi- lk2nd-msm8916
+    ```
+  - 编译产物为 `build-lk2nd-msm8916/lk2nd.img` ，这个不需要签名
+- 参照[installation_for_pd1510.md](installation_for_pd1510.md)安装
+
 ## Additional build flags
 
 lk2nd build system provides few additional compile time settings that you can add

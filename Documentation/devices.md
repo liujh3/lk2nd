@@ -1,68 +1,9 @@
 # Supported devices
 
-### lk2nd-msm8916
-- Acer Iconia Talk S A1-724 (quirky - see comment in `lk2nd/device/dts/msm8916/msm8916-mtp-smb1360.dts`)
-- Alcatel OneTouch Idol 3 (4.7) - 6039*
-- Alcatel OneTouch Idol 3 (5.5) - 6045*
-- ARK Benefit A3 - peach
-- Asus Zenfone 2 Laser (720p) - Z00L
-- Asus Zenfone 2 Laser (1080p) - Z00T
-- Asus Zenfone 2 Laser ZE500KL - Z00E
-- Asus Zenfone Max ZC550KL (2016) - Z010D
-- BQ Aquaris M5 - piccolo
-- BQ Aquaris X5 - paella, picmt
-- DragonBoard 410c - apq8016-sbc
-- EE Harrier Mini - harrier-mini
-- GPLUS FL8005A
-- HTC One M8s - m8qlul (quirky - see comment in `lk2nd/device/dts/msm8916/msm8939-htc-m8qlul.dts`)
-- Huawei Ascend G7 - G7-L01
-- Huawei G7 Plus / G8 / GX8 / Maimang 4 - rio
-- Huawei Honor 5X / GR5 (2016) - kiwi
-- Huawei MediaPad T2 10.0 Pro - federer
-- Huawei Y635 - Y635-L01 (quirky - see comment in `lk2nd/device/dts/msm8916/msm8916-huawei-y635-l01.dts`)
-- Lenovo A6000
-- Lenovo A6010
-- Lenovo PHAB Plus - PB1-770M, PB1-770N, PB1-770P
-- Lenovo Vibe K5 (Plus) - A6020a40, A6020a40 (HW Code 39), A6020a46, A6020l36
-- LG K10 (m216) - K420
-- LG Leon LTE (c50) - H340, H342, H343, H345, MS345, etc
-- LYF Wind 1 - ls5010
-- Marshall London
-- Motorola Moto E (2015) - surnia
-- Motorola Moto G (2015) - osprey
-- Motorola Moto G4 Play - harpia
-- Panasonic ELUGA U2
-- Samsung Galaxy A3 (2015) - SM-A300F, SM-A300FU, SM-A300YZ
-- Samsung Galaxy A5 (Duos) (2015) - SM-A5000, SM-A500F, SM-A500FU, SM-A500H, SM-A500YZ
-- Samsung Galaxy A7 (2015) - SM-A700YD
-- Samsung Galaxy Ace 4 - SM-G357FZ (quirky - see comment in `lk2nd/device/dts/msm8916/msm8916-samsung.dts`)
-- Samsung Galaxy Core Max - SM-G5108Q (quirky - see comment in `lk2nd/device/dts/msm8916/msm8916-samsung.dts`)
-- Samsung Galaxy Core Prime LTE - SM-G360F, SM-G360G, SM-G360T (rossaltezt is quirky - see comment in `lk2nd/device/dts/msm8916/msm8916-samsung.dts`)
-- Samsung Galaxy E5 - SM-E500F, SM-E500H
-- Samsung Galaxy E7 - SM-E7000, SM-E700F
-- Samsung Galaxy Grand Max - SM-G720AX
-- Samsung Galaxy Grand Prime - SM-G530FZ, SM-G530H, SM-G530R4, SM-G530W, SM-G530Y (G530Y is quirky - see comment in `lk2nd/device/dts/msm8916/msm8916-samsung.dts`)
-- Samsung Galaxy J3 (2016) - SM-J3109, SM-J320YZ
-- Samsung Galaxy J3 Pro - SM-J3110, SM-J3119
-- Samsung Galaxy J5 (2015) - SM-J5007, SM-J5008, SM-J500F, SM-J500FN, SM-J500H, SM-J500M
-- Samsung Galaxy J5 (2016) - SM-J5108, SM-J510F, SM-J510FN, SM-J510GN, SM-J510H, SM-J510L, SM-J510MN, SM-J510UN
-- Samsung Galaxy J7 (2015) - SM-J7008, SM-J700P
-- Samsung Galaxy On7 (2015) - SM-G6000, SM-G600FY, SM-G600S
-- Samsung Galaxy S4 Mini Value Edition - GT-I9195I
-- Samsung Galaxy Tab 4 10.1 (2015) - SM-T533
-- Samsung Galaxy Tab A 8.0 (2015) - SM-T350, SM-T355, SM-T355Y, SM-T357W
-- Samsung Galaxy Tab A 9.7 (2015) - SM-T550, SM-T555
-- Samsung Galaxy Tab E 9.6 WiFi (2015) - SM-T560NU
-- Vivo Y21L
-- Vivo Y31 (2015) - pd1505
-- Vodafone Smart prime 6
-- Wiko Pulp 4G
-- Wileyfox Swift - crackling
-- Xiaomi Mi 4i - ferrari
-- Xiaomi Redmi 2 - wt86047, wt88047
-- Xiaomi Redmi 3 - ido
-- Yamada EveryPad III (rebrand of Lenovo PHAB Plus)
-- Zhihe-series 4G Modem Stick - ufi-001c(b), uf896, uz801-v3.0 (uz801-v3.0 is quirky - see comment in `lk2nd/device/dts/msm8916/msm8916-512mb-mtp.dts`)
+### msm8916
+
+- Vivo Y51 (pd1510) (仅支持 `tmotm9605a` 面板，硬编码，不同面板的可能会损坏，而且需要将aboot刷成自己编译的lk，参照 [building.md](building.md))
+- 其余设备我都删除了，设备树为 `lk2nd/device/dts/msm8916/msm8916.dts` ，仅包含引导必要的平台ID，没有设备型号，开机显示 Unknown ，如果想修复可以自己瞎填一个
 
 ### lk2nd-msm8909
 
