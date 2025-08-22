@@ -28,14 +28,6 @@ uint32_t panel_regulator_settings[] = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
-/*
- * The list of panels that are supported on this target.
- * Any panel in this list can be selected using fastboot oem command.
- */
-static struct panel_list supp_panels[] = {
-	{"tmotm9605a_qhd_vid", TMOTM9605A_QHD_VID_PANEL},
-};
-
 static uint32_t panel_id;
 
 int oem_panel_rotation(void)

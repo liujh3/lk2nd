@@ -1592,6 +1592,8 @@ int boot_linux_from_mmc(void)
 	unsigned second_actual = 0;
 	enum boot_type boot_type = 0;
 
+	static char extra_cmdline[64] = "";
+
 #ifdef OSVERSION_IN_BOOTIMAGE
 	uint32_t dtb_image_offset = 0;
 #endif
@@ -1650,6 +1652,10 @@ int boot_linux_from_mmc(void)
 	if (boot_into_recovery) {
 		if (partition_get_index("recovery") != INVALID_PTN) {
 			ptn_name = "recovery";
+		} else {
+		// 不存在recovery分区，另外处理
+		dprintf(INFO, "Recovery partition not found. Appending custom bootarg.\n");
+		strlcpy(extra_cmdline, " recovery", sizeof(extra_cmdline)); //注意空格
 		}
 	}
 
@@ -1697,6 +1703,14 @@ int boot_linux_from_mmc(void)
 
 	/* ensure commandline is terminated */
         hdr->cmdline[BOOT_ARGS_SIZE-1] = 0;
+
+	/* 添加额外启动参数 */
+	if (*extra_cmdline) {
+		if (strlcat((char *)hdr->cmdline, extra_cmdline, BOOT_ARGS_SIZE) >= BOOT_ARGS_SIZE) {
+			dprintf(CRITICAL, "Not enough space to append cmdline.\n");
+			return -1;
+		}
+	}
 
 #if DEVICE_TREE
 #ifndef OSVERSION_IN_BOOTIMAGE
